@@ -1,0 +1,21 @@
+﻿<Window x:Class="Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+		<ToolBarTray Background="#FF1F1F1F" Height="32" VerticalAlignment="Top">
+			<ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" Background="#FF9C9C9C">
+				<RadioButton GroupName="Toolbar" Style="{StaticResource {x:Type ToggleButton}}">
+					<Image Source="/Resources/image1.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+				</RadioButton>
+				<RadioButton GroupName="Toolbar" Style="{StaticResource {x:Type ToggleButton}}">
+					<Image Source="/Resources/image2.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+				</RadioButton>
+			</ToolBar>
+		</ToolBarTray>
+	</Grid>
+</Window>
