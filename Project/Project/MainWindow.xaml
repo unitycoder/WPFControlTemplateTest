@@ -6,16 +6,65 @@
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+	<Grid>
+		<Grid.Resources>
+			<!-- Brushes for colours/backgrounds -->
+			<SolidColorBrush x:Key="FontBrush" Color="Black"/>
+			<SolidColorBrush x:Key="BgBrush1" Color="Red"/>
+			<SolidColorBrush x:Key="BorderBrush1" Color="Transparent"/>
+			<SolidColorBrush x:Key="CheckedBrush" Color="Green"/>
+
+			<!-- Left Button Template -->
+			<ControlTemplate x:Key="ToggleButtonLeft" TargetType="{x:Type ToggleButton}">
+				<Border
+                Name="Border"
+                Background="{StaticResource BgBrush1}"
+                BorderBrush="{StaticResource BorderBrush1}"
+                BorderThickness="1"
+                CornerRadius="0,0,0,0">
+					<ContentPresenter
+                    HorizontalAlignment="Center"
+                    Margin="{TemplateBinding Padding}"
+                    VerticalAlignment="Center"
+                    Content="{TemplateBinding Content}"
+                    TextBlock.FontWeight="Bold"
+                    TextBlock.Foreground="{StaticResource FontBrush}"/>
+				</Border>
+				<ControlTemplate.Triggers>
+					<Trigger Property="ToggleButton.IsMouseOver" Value="true">
+						<Setter TargetName="Border" Property="Background" Value="Yellow"/>
+					</Trigger>
+					<Trigger Property="IsChecked" Value="true">
+						<Setter TargetName="Border" Property="Background" Value="{StaticResource CheckedBrush}"/>
+					</Trigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+		</Grid.Resources>
+		
 		<ToolBarTray Background="#FF1F1F1F" Height="32" VerticalAlignment="Top">
-			<ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" Background="#FF9C9C9C">
-				<RadioButton GroupName="Toolbar" Style="{StaticResource {x:Type ToggleButton}}">
+			<ToolBarTray.Resources>
+				<Style TargetType="{x:Type RadioButton}">
+					<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+					<Style.Resources>
+						<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Violet"/>
+						<SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Orange"/>
+					</Style.Resources>
+				</Style>
+			</ToolBarTray.Resources>
+			<ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" Background="Transparent">
+				<RadioButton GroupName="View" Padding="2" Template="{DynamicResource ToggleButtonLeft}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+					<Image Source="/Resources/image2.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+				</RadioButton>
+				<RadioButton GroupName="View" Padding="2" Template="{DynamicResource ToggleButtonLeft}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
 					<Image Source="/Resources/image1.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" />
 				</RadioButton>
-				<RadioButton GroupName="Toolbar" Style="{StaticResource {x:Type ToggleButton}}">
-					<Image Source="/Resources/image2.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+				<RadioButton GroupName="View" Padding="2" Template="{DynamicResource ToggleButtonLeft}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+					<Image Source="/Resources/image2.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderTransformOrigin="1.583,0.958" />
 				</RadioButton>
 			</ToolBar>
 		</ToolBarTray>
 	</Grid>
+	
+	
+	
 </Window>
