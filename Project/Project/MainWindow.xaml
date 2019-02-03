@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+	<Window.Background>
+		<SolidColorBrush Color="#FF323232"/>
+	</Window.Background>
 	<Grid>
 		<Grid.Resources>
+			<!-- https://stackoverflow.com/a/18400415/5452781 -->
 			<!-- Brushes for colours/backgrounds -->
 			<SolidColorBrush x:Key="FontBrush" Color="Black"/>
 			<SolidColorBrush x:Key="BgBrush1" Color="Red"/>
 			<SolidColorBrush x:Key="BorderBrush1" Color="Transparent"/>
 			<SolidColorBrush x:Key="CheckedBrush" Color="Green"/>
 
-			<!-- Left Button Template -->
+			<!-- Template -->
 			<ControlTemplate x:Key="ToggleButtonLeft" TargetType="{x:Type ToggleButton}">
 				<Border
                 Name="Border"
