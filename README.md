@@ -1,0 +1,2 @@
+# WPFControlTemplateTest
+testing
