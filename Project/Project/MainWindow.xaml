@@ -46,15 +46,6 @@
 		</Grid.Resources>
 		
 		<ToolBarTray Background="#FF1F1F1F" Height="32" VerticalAlignment="Top">
-			<ToolBarTray.Resources>
-				<Style TargetType="{x:Type RadioButton}">
-					<Setter Property="FocusVisualStyle" Value="{x:Null}" />
-					<Style.Resources>
-						<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Violet"/>
-						<SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Orange"/>
-					</Style.Resources>
-				</Style>
-			</ToolBarTray.Resources>
 			<ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" Background="Transparent">
 				<RadioButton GroupName="View" Padding="2" Template="{DynamicResource ToggleButtonLeft}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
 					<Image Source="/Resources/image2.png" Width="24" Height="24" RenderOptions.BitmapScalingMode="NearestNeighbor" />
